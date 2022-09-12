@@ -6,7 +6,7 @@ const bubbleSort = (list) => {
     }
   }
   return list;
-}
+};
 
 // 选择排序
 const selectSort = (list) => {
@@ -16,31 +16,31 @@ const selectSort = (list) => {
     }
   }
   return list;
-}
+};
 
 // 插入排序，取决于当前的数据排列形式
 const insertSort = (list) => {
   for (let i = 1; i < list.length; i++) {
     for (let j = i; j >= 0; j--) {
-      if (list[j - 1] > list[j]) swap(list, j, j - 1)
+      if (list[j - 1] > list[j]) swap(list, j, j - 1);
     }
   }
-  return list
-}
+  return list;
+};
 
 const swap = (list, index1, index2) => {
 
-  let a = list[index1], b = list[index2]
+  let a = list[index1], b = list[index2];
   a = a ^ b;
   b = a ^ b;
   a = a ^ b;
   list[index1] = a;
-  list[index2] = b
-}
+  list[index2] = b;
+};
 
 
 module.exports = {
   bubbleSort,
   selectSort,
   insertSort
-}
+};
