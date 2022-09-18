@@ -18,7 +18,7 @@ function process(list, left, right) {
   const leftList =  process(list, left, middle);
   const rightList = process(list, middle + 1, right);
 
-  return mergeList(leftList, rightList);
+  return mergeList(leftList, rightList,);
 }
 
 /**

@@ -1,4 +1,5 @@
 const { forkNewList } = require("../utils/get-list");
+const { swap } = require("../utils/swap");
 
 // 冒泡排序
 const bubbleSort = (inputList) => {
@@ -33,15 +34,7 @@ const insertSort = (inputList) => {
   return list;
 };
 
-const swap = (list, index1, index2) => {
 
-  let a = list[index1], b = list[index2];
-  a = a ^ b;
-  b = a ^ b;
-  a = a ^ b;
-  list[index1] = a;
-  list[index2] = b;
-};
 
 
 module.exports = {
