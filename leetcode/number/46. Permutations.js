@@ -28,7 +28,7 @@ const dfs = (result, output, currentIndex) => {
     result.push(newList);
     return;
   }
-  for( let i = currentIndex; i < output.length; i++) {
+  for( let i = currentIndex; i < output.length; i++) { //此处的 i 表示从这里开始循环
     swap(output, i , currentIndex);
     dfs(result, output, currentIndex + 1);
     // 完成结果，撤销
