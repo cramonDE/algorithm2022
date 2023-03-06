@@ -24,15 +24,14 @@ const permute = function (nums) {
  */
 const dfs = (result, output, currentIndex) => {
   if (currentIndex === output.length) {
-    const newList = forkNewList(output); // 注意这里要深复制一下数组，后面的swap是基于引用的修改
-    result.push(newList);
+    result.push(output);
     return;
   }
-  for( let i = currentIndex; i < output.length; i++) { //此处的 i 表示从这里开始循环
-    swap(output, i , currentIndex);
-    dfs(result, output, currentIndex + 1);
+  for( let i = currentIndex; i < output.length; i++) {
+    const forkOutput = JSON.parse(JSON.stringify(output)); // 深拷贝一个数组，因为后面有交换的操作
+    swap(forkOutput, i, currentIndex);
+    dfs(result, forkOutput, currentIndex + 1);
     // 完成结果，撤销
-    swap(output, i, currentIndex);
   }
 };
 
